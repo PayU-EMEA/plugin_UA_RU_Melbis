@@ -8,9 +8,9 @@
 3. В поле HTML-код для совершения оплаты вставьте текст типа:
 
 
-> <P align=center><STRONG><FONT color=#ff0000>Внимание!</FONT></STRONG> </P>
-> <P align=center><STRONG>Транзакция платежа осуществляется непосредственно на защищенном сайте компании PayU.</STRONG></P><BR>
-> <P align=center><INPUT onclick="document.location='./pay_go.php?type=payu&amp;{PHPSESSID}'" type=button value="Оплатить"></P>
+ <P align=center><STRONG><FONT color=#ff0000>Внимание!</FONT></STRONG> </P>
+ <P align=center><STRONG>Транзакция платежа осуществляется непосредственно на защищенном сайте компании PayU.</STRONG></P><BR>
+ <P align=center><INPUT onclick="document.location='./pay_go.php?type=payu&amp;{PHPSESSID}'" type=button value="Оплатить"></P>
 
 4. Выполните отправку данных на сервере из клиентской программы Melbis Shop.
 

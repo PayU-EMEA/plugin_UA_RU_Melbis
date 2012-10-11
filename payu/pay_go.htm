@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Оплата заказа № {ORDER_CODE}</title>
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}">
+<META http-equiv="Cache-Control" content="no-cache">
+<style>
+
+BODY, TD { font-size: 12px; font-family: Arial, Geneva CY, Sans-Serif; color: #000000;  }
+P, FORM { margin: 0px; }
+H1 { font-size: 20px; font-weight: bold; color: #6D8293; margin-bottom: 0px; }
+A { color: #6D8293; }
+A: active { text-decoration: none; }
+A: hover { text-decoration: none; }
+
+/* Fonts */
+ .font_small { font-size: 11px; }
+ .font_small TD { font-size: 11px; }
+ .font_big { font-size: 15px; font-weight: bold; }
+ .font_select { color: #F24D4D; font-size: bold; }
+
+
+/* Block type - only contur */
+ .block_contur { margin-top: 5px; }
+ .block_contur .img_up_left { height: 22px; width: 5px; background: #6D8293 }
+ .block_contur .img_up_right { height: 22px; width: 5px; background: #6D8293 }
+ .block_contur .up_background { background: #6D8293 }
+ .block_contur .img_down_left 	{ height: 1px; width: 1px; background: #6D8293 }
+ .block_contur .img_down_right { height: 1px; width: 1px; background: #6D8293 }
+ .block_contur .down_background { background: #6D8293 }
+ .block_contur .cell_body { border-left: 1px solid #6D8293; border-right: 1px solid #6D8293; }
+ .block_contur .title { padding-top: 2px; color: #FFFFFF; }
+ .block_contur .between { height: 1px; background-color: #6D8293; }
+
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1 align="center">Оплата заказа № {ORDER_CODE}</h1>
+<p>&nbsp;</p>
+
+<table class="block_contur" cellspacing="0" cellpadding="0" width=600 border=0 align="center">
+  <tr> 
+    <td class="up_background"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><img src="images/empty.gif" class="img_up_left"></td>
+          <td width=100% class="title">Параметры оплаты</td>
+          <td><img src="images/empty.gif" class="img_up_right"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td class="cell_body" style="padding: 20px"> 
+
+<form name='merchant' action='{REQUEST_URL}' method='post'>
+<input type="hidden" name="operation_xml" value="{XML}" />
+<input type="hidden" name="signature" value="{SIGN}" />
+
+      <table width="100%" border="0" cellspacing="5" cellpadding="0">
+        <tr> 
+          <td nowrap>Номер заказа:</td>
+          <td width=100% nowrap ><b>{ORDER_CODE}</b></td>
+        </tr>
+        <tr> 
+          <td nowrap>Сумма к оплате:</td>
+          <td width=100% nowrap ><b>{SUMA}</b></td>
+        </tr>
+      </table>
+
+{DEMO_RESULT}
+
+<div align="center"><input type="submit" value="Оплатить"></div>
+
+</form>
+
+    
+     
+    </td>
+  </tr>
+  <tr> 
+    <td class="down_background"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><img src="images/empty.gif" class="img_down_left"></td>
+          <td width="100%"></td>
+          <td><img src="images/empty.gif" class="img_down_right"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<div align="center"> &raquo; <a class="font_small" href="./">Вернуться в магазин</a> </div>
+</body>
+</html>
+
+
+

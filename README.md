@@ -6,12 +6,11 @@
 1. Разместите папку payu в каталог /pay_mod/
 2. Откройте клиентское приложение Melbis Shop. Зайдите в раздел Настройки - Способы оплаты и создайте новый вариант оплаты ( Смотрите скриншот )
 3. В поле HTML-код для совершения оплаты вставьте текст типа:
-
-```HTML
- <P align=center><STRONG><FONT color=#ff0000>Внимание!</FONT></STRONG> </P>
- <P align=center><STRONG>Транзакция платежа осуществляется непосредственно на защищенном сайте компании PayU.</STRONG></P><BR>
- <P align=center><INPUT onclick="document.location='./pay_go.php?type=payu&amp;{PHPSESSID}'" type=button value="Оплатить"></P>
-```
+	```HTML
+ 	<P align=center><STRONG><FONT color=#ff0000>Внимание!</FONT></STRONG> </P>
+ 	<P align=center><STRONG>Транзакция платежа осуществляется непосредственно на защищенном сайте компании PayU.</STRONG></P><BR>
+ 	<P align=center><INPUT onclick="document.location='./pay_go.php?type=payu&amp;{PHPSESSID}'" type=button value="Оплатить"></P>
+	```
 4. Выполните отправку данных на сервере из клиентской программы Melbis Shop.
 
 5. Зайдите по FTP на ваш сервер в директорию, где установлен магазин и откройте для редактирования файл: /pay_mod/payu/vars.php

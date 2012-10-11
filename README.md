@@ -32,3 +32,6 @@
 >define('__LANGUAGE__', "RU"); # Язык страницы оплаты
 
 
+Ссылка IPN : 
+
+http://{сайт}/pay_get.php?type=payu

@@ -50,13 +50,20 @@ function pay_go()
 $goods = $_SESSION['goods_info'];
 $client = &$_SESSION['client_info'];
 
-foreach ( $goods as $k => $v ) $goods[$k] = cleaningGoods( $v );
+foreach ( $goods as $k => $v ) $goods[$k] = array_reverse ( cleaningGoods( $v ) );
 
-foreach ( $goods['name'] as $v) 
-{
-	$pinfo[] = "";
-	$vat[] = ( $_SESSION['vat_cost'] == "" ) ? 0 : $_SESSION['vat_cost'];
-}
+$summ = $_SESSION['order_info']['itogo']; 
+ 	$stmp = 0; 
+ 	foreach ( $goods['name'] as $k => $v) 
+ 	{ 
+ 		if ( $stmp < $summ ) { 
+ 			$stmp += $goods['price'][$k] * $goods['how'][$k]; 
+ 			$pinfo[] = ""; 
+ 			$vat[] = ( $_SESSION['vat_cost'] == "" ) ? 0 : $_SESSION['vat_cost']; 
+ 		} else { 
+ 			unset( $goods['name'][$k], $goods['how'][$k], $goods['code'][$k], $goods[price][$k] ); 
+ 		} 
+ 	}
 
 # Create form for request
 $forSend = array (
